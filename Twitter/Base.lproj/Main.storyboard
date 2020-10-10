@@ -51,7 +51,7 @@
         <!--Home-->
         <scene sceneID="NjB-dK-9Jp">
             <objects>
-                <tableViewController id="PD9-bq-Xoh" sceneMemberID="viewController">
+                <tableViewController id="PD9-bq-Xoh" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C8W-5o-uZ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,14 @@
                             <outlet property="delegate" destination="PD9-bq-Xoh" id="FzQ-IU-AIL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="L0e-hv-Yj9"/>
+                    <navigationItem key="navigationItem" title="Home" id="L0e-hv-Yj9">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="CXW-Uj-dUy">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="PD9-bq-Xoh" id="MtF-sG-mYN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHu-eN-HLF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,6 +91,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ye2-Y3-3Qg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="linkColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="PD9-bq-Xoh" kind="relationship" relationship="rootViewController" id="2vC-gZ-xWK"/>
