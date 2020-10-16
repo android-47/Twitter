@@ -6,7 +6,8 @@
 //  Copyright © 2020 Dan. All rights reserved.
 //
 
-// commit: tw 2:creating tweets @10:18
+// commit: tw 3: @ 0:00
+// left at tw 3 @20:17
 
 import UIKit
 
@@ -17,6 +18,7 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 150
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,6 +74,12 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
             
         }
+        
+        cell.setFavorite(isFavorited: tweetArray[indexPath.row]["favorited"] as! Bool)
+        
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        
+        
         
         return cell
     }
