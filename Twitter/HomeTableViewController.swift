@@ -6,6 +6,8 @@
 //  Copyright © 2020 Dan. All rights reserved.
 //
 
+// commit: tw 2:creating tweets @10:18
+
 import UIKit
 
 class HomeTableViewController: UITableViewController {
@@ -15,6 +17,10 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         loadTweet()
     }
     
