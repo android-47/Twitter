@@ -6,28 +6,30 @@
 //  Copyright © 2020 Dan. All rights reserved.
 //
 
-// commit: tw 3: @ 0:00
-// left at tw 3 @20:17
-
 import UIKit
 
 class HomeTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
     var numberOfTweet: Int!
+    
+    let myRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 150
+        myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadTweet()
+        
     }
     
     
-    func loadTweet(){
+    @objc func loadTweet(){
         
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": 20]
@@ -41,6 +43,7 @@ class HomeTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
+            self.myRefreshControl.endRefreshing()
                 
         }, failure: { (Error) in
             print ("Unable to retreive tweets")
@@ -79,9 +82,10 @@ class HomeTableViewController: UITableViewController {
         
         cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         
-        
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
+        
     }
     
      
