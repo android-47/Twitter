@@ -1,5 +1,4 @@
 # Project 3 - *Twitter*
-
 # Twitter - Part II
 
 This is a basic twitter app to view, compose, favorite, and retweet tweets.
@@ -21,8 +20,7 @@ The following **bonus** features are implemented:
 - [ ] User sees embedded images in tweet if available. (3pts)
 
 ## App Second GIF
-
-<img src='./twitter-second-gif.gif'
+<img src='./twitter-second-gif.gif' />
 
 
 
@@ -51,5 +49,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./my_gif.gif'
+<img src='./my_gif.gif' />
 
