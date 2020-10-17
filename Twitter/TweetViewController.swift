@@ -10,7 +10,14 @@ import UIKit
 
 class TweetViewController: UIViewController {
 
-
+    @IBOutlet weak var tweetTextView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        tweetTextView.becomeFirstResponder()
+    }
     
     
     @IBAction func cancel(_ sender: Any) {
@@ -21,11 +28,12 @@ class TweetViewController: UIViewController {
     
     
     @IBAction func tweet(_ sender: Any) {
-        
-        if (!tweetTextView.text.isEmpty){
+        print ("tweettextview.textIS EMPTY: ", !tweetTextView.text.isEmpty)
+        if (!tweetTextView.text.isEmpty) {
             TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success: {
                 self.dismiss(animated: true, completion: nil)
             }, failure: { (error) in
+                print ("FAILED HERE--------------------------------------------------------------------------------------------")
                 print ("Error posting tweet \(error)")
                 self.dismiss(animated: true, completion: nil)
             })
@@ -35,18 +43,9 @@ class TweetViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
 
-        // Do any additional setup after loading the view.
-        
-        tweetTextView.becomeFirstResponder()
     
-        
-    }
     
-    @IBOutlet weak var tweetTextView: UITextView!
     
 
 }
