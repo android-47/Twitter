@@ -4,7 +4,7 @@
 
 This is a basic twitter app to view, compose, favorite, and retweet tweets.
 
-Time spent: **6** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
@@ -20,11 +20,9 @@ The following **bonus** features are implemented:
 - [ ] User can view their profile in a profile tab. (3pts)
 - [ ] User sees embedded images in tweet if available. (3pts)
 
-## Video Walkthrough
+## App Second GIF
 
-Here's a walkthrough of implemented user stories:
-
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./twitter-second-gif.gif'
 
 
 
@@ -49,9 +47,9 @@ The following **bonus** features are implemented:
 - [X] User can pull to refresh. (1pt)
 - [ ] User can load past tweets infinitely. (2pts)
 
-## Video Walkthrough
+## App First GIF
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./my_gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./my_gif.gif'
 
